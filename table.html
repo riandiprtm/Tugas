@@ -1,48 +1,114 @@
 <html>
+
 <head>
-<title>table</title>
+
+<title>table</title> 
+<script>
+            function validasi(){
+                var nama = document.getElementById('nama');
+                var kelas = document.getElementById('kelas');
+                var npm = document.getElementById('npm');
+ 
+                if (harusDiisi(nama, "nama belum diisi")) {
+                    if (harusDiisi(kelas, "kelas belum diisi")) {
+                        if (harusDiisi(npm, "npm belum diisi")) {
+                            return true;
+                        };
+                    };
+                };
+                return false;
+            }
+ 
+            function harusDiisi(att, msg){
+                if (att.value.length == 0) {
+                    alert(msg);
+                    att.focus();
+                    return false;
+                }
+ 
+                return true;
+            }
+        </script>
+
 <link rel="stylesheet" type="text/css" href="bootstrap\css\warna.css">
+
 </head>
+
 <body>
+
     <table border="1">
 
+
     <tr>
+
     <td>Nama</td>
+
     <td>Kelas</td>
+
     <td>Npm</td>
+
     </tr>
 
+
     <tr>
+
     <td>Anda</td>
+
     <td>3KA20</td>
+
     <td>12345678</td>
+
     </tr>
 
+
     <tr>
+
     <td>Andi</td>
+
     <td>3KA20</td>
+
     <td>11345678</td>
+
     </tr>
 
+
     <tr>
+
     <td>Ando</td>
+
     <td>3KA20</td>
+
     <td>22345678</td>
+
     </tr>
+
     </table>
 
+
     <br>
 
-    <form>
+
+    <form id="tabel" onsubmit="return validasi()" action="simpan.php" method="post">
+
     Nama:<br>
-    <input type="text" name="nama"><br>
+
+    <input type="text" name="nama" id="nama"><br>
+
     Kelas:<br>
-    <input type="integer" name="kelas"><br>
+
+    <input type="integer" name="kelas" id="kelas"><br>
+
     NPM:<br>
-    <input type="integer" name="npm"><br>
+
+    <input type="integer" name="npm" id="npm"><br>
+
     <br>
+
     <input type="submit" value="Submit">
+
     </form>
 
+
 </body>
+
 </html>
